@@ -19,22 +19,22 @@ function createMarkup (gallery) {
     return gallery.map(({preview, original, description})=> {
         return  `
         <li class="gallery__item">
-         <a
-           class="gallery__link"
-           href="${original}"
-         >
-           <img 
-             class="gallery__image"
-             src="${preview}"
-             data-source="${original}"
-             alt="${description}"
-             width="392px"
-             height="240px"
-             loading = "lazy"
-           />
-         </a>
-       </li>`
-       }
+        <a
+          class="gallery__link"
+          href="${original}"
+        >
+          <img 
+            class="gallery__image"
+            src="${preview}"
+            data-source="${original}"
+            alt="${description}"
+            width="392px"
+            height="240px"
+            loading = "lazy"
+          />
+        </a>
+      </li>`
+      }
     ).join('')
     
 }
@@ -143,20 +143,3 @@ function switchImagesWithArrows (e) {
     }
 
 }
-
-
-//! Добавление ленивой загрузки на изображения 
-
-
-const allImagesRef = document.querySelectorAll('.gallery__image');
-
-allImagesRef.forEach(image => {
-  image.addEventListener('load', () => {
-    console.log(123);
-  }, {once: true})
-})
-
-
-
-
-
